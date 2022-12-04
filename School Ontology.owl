@@ -1,0 +1,314 @@
+@prefix : <http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology> .
+
+<http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology> rdf:type owl:Ontology ;
+                                                                                  
+                                                                                  rdfs:comment """Mini Project:
+    Topic: School Ontology"""@en .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Admits
+
+:Admits rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "School admits Students"@en ;
+        
+        rdfs:domain :School ;
+        
+        rdfs:range :Student .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Employs
+
+:Employs rdf:type owl:ObjectProperty ;
+         
+         rdfs:comment "School employs Staff"@en ;
+         
+         rdfs:domain :School ;
+         
+         rdfs:range :Staff .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Learns
+
+:Learns rdf:type owl:ObjectProperty ;
+        
+        rdfs:comment "Student learns Subject"@en ;
+        
+        rdfs:domain :Student ;
+        
+        rdfs:range :Subject .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Teaches
+
+:Teaches rdf:type owl:ObjectProperty ;
+         
+         rdfs:comment "Teacher teaches Subject"@en ;
+         
+         rdfs:range :Subject ;
+         
+         rdfs:domain :Teaching .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Joined_ON
+
+:Joined_ON rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "Student joined date"@en ;
+           
+           rdfs:domain :Student ;
+           
+           rdfs:range xsd:dateTime .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Staff_ID
+
+:Staff_ID rdf:type owl:DatatypeProperty ;
+          
+          rdfs:comment "ID of Staff"@en ;
+          
+          rdfs:domain :Staff ;
+          
+          rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Student_ID
+
+:Student_ID rdf:type owl:DatatypeProperty ;
+            
+            rdfs:comment "ID of Student"@en ;
+            
+            rdfs:domain :Student ;
+            
+            rdfs:range xsd:string .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Teach
+
+:Teach rdf:type owl:DatatypeProperty ;
+       
+       rdfs:comment "Teacher teaching Subject"@en ;
+       
+       rdfs:domain :Teaching ;
+       
+       rdfs:range xsd:string .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Administrative
+
+:Administrative rdf:type owl:Class ;
+                
+                owl:equivalentClass :Maintenance ;
+                
+                rdfs:subClassOf :Non_Teaching ;
+                
+                rdfs:comment "This is Sub Class Administrative"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Government
+
+:Government rdf:type owl:Class ;
+            
+            rdfs:subClassOf :School ;
+            
+            rdfs:comment "This is Sub Class Government"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#House_Keeping
+
+:House_Keeping rdf:type owl:Class ;
+               
+               rdfs:subClassOf :Non_Teaching ;
+               
+               rdfs:comment "This is Sub Class House_Keeping"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Junior_Student
+
+:Junior_Student rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Student ;
+                
+                rdfs:comment "This is Sub Class Junior_Student"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Maintenance
+
+:Maintenance rdf:type owl:Class ;
+             
+             rdfs:subClassOf :Non_Teaching ;
+             
+             rdfs:comment "This is Sub Class Maintenance"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Non_Teaching
+
+:Non_Teaching rdf:type owl:Class ;
+              
+              rdfs:subClassOf :Staff ;
+              
+              rdfs:comment "This is Sub Class Non_Teaching"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Private
+
+:Private rdf:type owl:Class ;
+         
+         rdfs:subClassOf :School ;
+         
+         rdfs:comment "This is Sub Class Private"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#School
+
+:School rdf:type owl:Class ;
+        
+        rdfs:comment "This is Class School"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Senior_Student
+
+:Senior_Student rdf:type owl:Class ;
+                
+                rdfs:subClassOf :Student ;
+                
+                rdfs:comment "This is Sub Class Senior_Student"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Staff
+
+:Staff rdf:type owl:Class ;
+       
+       owl:disjointWith :Student ;
+       
+       rdfs:comment "This is Class Staff"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Student
+
+:Student rdf:type owl:Class ;
+         
+         rdfs:comment "This is Class Student"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Subject
+
+:Subject rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Supporting
+
+:Supporting rdf:type owl:Class ;
+            
+            rdfs:subClassOf :Non_Teaching ;
+            
+            rdfs:comment "This is Sub Class Supporting"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Teaching
+
+:Teaching rdf:type owl:Class ;
+          
+          rdfs:subClassOf :Staff ;
+          
+          rdfs:comment "This is Sub Class Teaching"@en .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Aruna_M
+
+:Aruna_M rdf:type :Teaching ,
+                  owl:NamedIndividual ;
+         
+         :Teach "Semantic Web"@en ;
+         
+         :Teaches :Riddho .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#Riddho
+
+:Riddho rdf:type :Student ,
+                 owl:NamedIndividual ;
+        
+        :Joined_ON "2019-06-21T09:00:00"@en ;
+        
+        :Student_ID "RA1911003010771"@en .
+
+
+
+###  http://www.semanticweb.org/sushanthgavirineni/ontologies/2022/9/School-ontology#SRMIST
+
+:SRMIST rdf:type :School ,
+                 owl:NamedIndividual ;
+        
+        :Employs :Aruna_M ;
+        
+        :Admits :Riddho .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
